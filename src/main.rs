@@ -49,8 +49,8 @@ async fn main() -> Result<(), sqlx::Error> {
         )
         .layer(Extension(pool));
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:8000").await.unwrap();
-    info!("Server is running on 0.0.0.0:8000");
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:80").await.unwrap();
+    info!("Server is running on 0.0.0.0:80");
 
     axum::serve(listener, app).await.unwrap();
 
